@@ -88,6 +88,7 @@ public class MainActivity extends Activity {
         for(int i=0;i<100;i++){
             a+="["+i+"]https://github.com/pengwei1024/LogUtils";
         }
-        LogUtils.alert(this, a);
+        // fixme: not yet implement?
+        // LogUtils.alert(this, a);
     }
 }
