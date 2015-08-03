@@ -6,6 +6,8 @@ import android.util.Log;
 
 import com.apkfuns.logutils.utils.SystemUtil;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.lang.reflect.Field;
 
 /**
@@ -85,6 +87,11 @@ public final class LogUtils  {
     }
     public static void e(Object object){
         logger.e(SystemUtil.getStackTrace(), object);
+    }
+    public static void e(Exception ex){
+        StringWriter writer = new StringWriter();
+        ex.printStackTrace(new PrintWriter(writer));
+        logger.e(SystemUtil.getStackTrace(), writer.toString());
     }
 
     /**
